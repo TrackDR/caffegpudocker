@@ -10,6 +10,6 @@ sudo apt-get install lxc-docker
 
 Run docker instance:
 
-docker pull trackdr/caffegpudocker;
+sudo docker pull trackdr/caffegpudocker;
 DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm";
 sudo docker run -ti $DOCKER_NVIDIA_DEVICES trackdr/caffegpudocker /bin/bash
