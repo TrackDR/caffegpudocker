@@ -17,7 +17,7 @@ sudo docker run -ti $DOCKER_NVIDIA_DEVICES trackdr/caffegpudocker /bin/bash
 
 Download samples for cuda:
 chmod +x cuda\_\*\_linux.run;
-./cuda\_\*\_linux.run -extract=`pwd`;
+./cuda\_\*\_linux.run -extract=\`pwd\`;
 ./cuda-samples-linux-\*.run -noprompt;
 cd /usr/local/cuda-7.0/samples/1\_Utilities/deviceQuery;
 make;
