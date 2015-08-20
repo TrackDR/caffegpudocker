@@ -27,10 +27,10 @@ RUN apt-get update && apt-get install -y \
 RUN cd /opt && git clone https://github.com/BVLC/caffe.git && cd caffe
 RUN cd /opt/caffe/python && for req in $(cat requirements.txt); do pip install $req; done  
 RUN cd /opt/caffe && cp Makefile.config.example Makefile.config
-RUN sed -i '/^# WITH_PYTHON_LAYER := 1/s/^# //' Makefile.config
-RUN make all
-RUN make pycaffe
-RUN make test
+RUN cd /opt/caffe && sed -i '/^# WITH_PYTHON_LAYER := 1/s/^# //' Makefile.config
+RUN cd /opt/caffe && make all
+RUN cd /opt/caffe && make pycaffe
+RUN cd /opt/caffe && make test
 
 ENV PYTHONPATH /opt/caffe/python:$PYTHONPATH
 
