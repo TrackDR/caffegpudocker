@@ -23,3 +23,6 @@ chmod +x cuda\_\*\_linux.run;
 cd /usr/local/cuda-7.0/samples/1\_Utilities/deviceQuery;
 make;
 ../../bin/x86_64/linux/release/deviceQuery
+
+cd /opt/caffe; 
+make runtest
