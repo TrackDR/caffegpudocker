@@ -11,5 +11,14 @@ sudo apt-get install lxc-docker
 Run docker instance:
 
 sudo docker pull trackdr/caffegpudocker;
+/home/ubuntu/NVIDIA_CUDA-7.0_Samples/bin/x86_64/linux/release/deviceQuery;
 DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm";
 sudo docker run -ti $DOCKER_NVIDIA_DEVICES trackdr/caffegpudocker /bin/bash
+
+Download samples for cuda:
+chmod +x cuda_*_linux.run;
+./cuda_*_linux.run -extract=`pwd`;
+./cuda-samples-linux-*.run -noprompt;
+cd /usr/local/cuda-7.0/samples/1_Utilities/deviceQuery;
+make;
+../../bin/x86_64/linux/release/deviceQuery
