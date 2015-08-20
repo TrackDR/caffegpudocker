@@ -23,15 +23,14 @@ RUN apt-get update && apt-get install -y \
   python-scipy \
   libopencv-dev \
   
-
 # Clone Caffe repo and move into it
 RUN cd /opt && git clone https://github.com/BVLC/caffe.git && cd caffe
 RUN cd /opt/caffe/python && for req in $(cat requirements.txt); do pip install $req; done  
 RUN cd /opt/caffe && cp Makefile.config.example Makefile.config
 RUN sed -i '/^# WITH_PYTHON_LAYER := 1/s/^# //' Makefile.config
-RUN make -j4 all
+RUN make all
 RUN make pycaffe
-RUN make -j4 test
+RUN make test
 
-ENV PYTHONPATH=/opt/caffe/python:$PYTHONPATH
+ENV PYTHONPATH /opt/caffe/python:$PYTHONPATH
 
