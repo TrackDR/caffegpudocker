@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
   python-dev \
   python-numpy \
   python-scipy \
-  libopencv-dev \
+  libopencv-dev
   
 # Clone Caffe repo and move into it
 RUN cd /opt && git clone https://github.com/BVLC/caffe.git && cd caffe
