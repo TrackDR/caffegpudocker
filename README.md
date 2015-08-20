@@ -16,6 +16,7 @@ DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiact
 sudo docker run -ti $DOCKER_NVIDIA_DEVICES trackdr/caffegpudocker /bin/bash
 
 Download samples for cuda:
+
 chmod +x cuda\_\*\_linux.run;
 ./cuda\_\*\_linux.run -extract=\`pwd\`;
 ./cuda-samples-linux-\*.run -noprompt;
